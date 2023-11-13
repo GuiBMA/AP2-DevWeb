@@ -1,11 +1,25 @@
-function verificarSenha() {
-    var senhaCorreta = md5('4321')
-    const senhaUsuario = document.getElementById('senha').value;
-    var senhaDigitada = md5(senhaUsuario)
+if (sessionStorage.getItem('token')){
+    document.getElementById('secreta').style.display = 'block';
+    document.getElementById('formulario').style.display = 'none';
+} else {
+    document.getElementById('secreta').style.display = 'none';
+    document.getElementById('formulario').style.display = 'block';
+}
 
-    if (senhaDigitada !== senhaCorreta) {
-        alert('Senha incorreta!'); 
-    } else {
+function verificarSenha() {
+    const senhaUsuario = document.getElementById('senha').value;
+    const senhaCorreta = 'd93591bdf7860e1e4ee2fca799911215'
+
+    if (hex_md5(senhaUsuario) === senhaCorreta) {
+        sessionStorage.setItem('token', 'valido')
         window.location = "/pagina.html";
+    } else {
+        alert('Senha incorreta!'); 
     }
+
+}
+
+const limpaToken = () => {
+    sessionStorage.removeItem('token');
+    window.location = '/index.html';
 }

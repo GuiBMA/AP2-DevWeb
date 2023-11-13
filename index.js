@@ -12,7 +12,7 @@ function verificarSenha() {
 
     if (hex_md5(senhaUsuario) === senhaCorreta) {
         sessionStorage.setItem('token', 'valido')
-        window.location = "/pagina.html";
+        window.location = "/AP2-DevWeb/pagina.html";
     } else {
         alert('Senha incorreta!'); 
     }
@@ -21,5 +21,5 @@ function verificarSenha() {
 
 const limpaToken = () => {
     sessionStorage.removeItem('token');
-    window.location = '/index.html';
+    window.location = '/';
 }

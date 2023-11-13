@@ -6,6 +6,6 @@ function verificarSenha() {
     if (senhaDigitada !== senhaCorreta) {
         alert('Senha incorreta!'); 
     } else {
-        document.location.href = "/pagina.html";
+        window.location = "/pagina.html";
     }
 }

@@ -73,7 +73,7 @@ const handleClick = (e) => {
     console.log(localStorage.getItem('id'));
     console.log(JSON.parse(localStorage.getItem('dados')).altura);
 
-    document.location = `/outra.html?id=${artigo.dataset.id}`;
+    document.location = `https://guibma.github.io/AP2-DevWeb/outra.html?id=${artigo.dataset.id}`;
 }
 
 const acha_cookie = (chave) => {
